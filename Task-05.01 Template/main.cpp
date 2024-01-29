@@ -16,9 +16,10 @@ T squaring (T value) {
 
 template <>
 std::vector<int> squaring(std::vector<int> vec) {
-    
-    for (int i : vec) {
-        pow(i, 2);
+    auto it = vec.begin();
+    while (it < vec.end()) {
+        *it = pow(*it, 2);
+        it++;
     }
     return vec;
 }
